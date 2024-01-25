@@ -1,0 +1,34 @@
+name: Build & Publish
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Set up JDK
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+
+      - name: Build with Gradle
+        run: ./gradlew build
+
+      - name: Publish to deploy repository with Gradle
+        run: ./gradlew --no-daemon publish
+        env:
+          A5K_USERNAME: ${{ secrets.A5K_USERNAME }}
+          A5K_PASSWORD: ${{ secrets.A5K_PASSWORD }}
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: artifacts
+          path: build/libs

@@ -1,6 +1,6 @@
 # Java Telegram Bot API Kindings
 
-Kindings `💡 kotlin bindings` for [Java Telegram Bot API](https://github.com/pengrad/java-telegram-bot-api)
+Kindings is `💡 kotlin bindings` for [Java Telegram Bot API](https://github.com/pengrad/java-telegram-bot-api)
 
 Features:
 * 🛠 `WIP` Kotlin-style API methods for all [available methods](https://core.telegram.org/bots/api#available-methods)
@@ -27,7 +27,7 @@ Add `telegram-bot-api-kindings` dependency of the same version as [java-telegram
 You can use API method-specific implemented functions like `sendMessage`: 
 
 ```kotlin
-telegram.sendMessage(chatId = "anfanik", text = "Hello <b>world</b>!") {
+telegram.sendMessage(chatId = "anfanik", text = "Hello ${"world".bold()}!") {
     parseMode(ParseMode.HTML)
 }
 ```
@@ -35,7 +35,7 @@ telegram.sendMessage(chatId = "anfanik", text = "Hello <b>world</b>!") {
 or general `execute` function for not-implemented API methods:
 
 ```kotlin
-telegram.execute(SendMessage("anfanik", "Hello <b>world</b>!")) {
+telegram.execute(SendMessage("anfanik", "Hello ${"world".bold()}!")) {
     parseMode(ParseMode.HTML)
 }
 ```

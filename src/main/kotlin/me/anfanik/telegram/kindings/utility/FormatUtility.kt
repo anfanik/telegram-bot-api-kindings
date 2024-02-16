@@ -4,6 +4,7 @@ import com.pengrad.telegrambot.model.request.ParseMode
 import com.pengrad.telegrambot.model.request.ParseMode.*
 import me.anfanik.telegram.kindings.utility.format.HtmlMarkdownFormatter
 import me.anfanik.telegram.kindings.utility.format.MarkdownFormatter
+import me.anfanik.telegram.kindings.utility.format.MarkdownV1MarkdownFormatter
 
 var DEFAULT_MARKDOWN_MODE = HTML
 
@@ -34,6 +35,6 @@ fun String.code(language: String, parseMode: ParseMode = DEFAULT_MARKDOWN_MODE) 
 private fun getMarkdownFormatter(parseMode: ParseMode): MarkdownFormatter =
     when (parseMode) {
         HTML -> HtmlMarkdownFormatter
-        Markdown -> TODO()
+        Markdown -> MarkdownV1MarkdownFormatter
         MarkdownV2 -> TODO()
     }

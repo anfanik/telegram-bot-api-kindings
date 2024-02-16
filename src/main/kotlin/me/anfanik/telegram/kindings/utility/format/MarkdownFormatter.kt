@@ -16,6 +16,6 @@ interface MarkdownFormatter {
 
     fun emoji(fallbackEmoji: String, emojiId: Long): String
 
-    fun code(text: String, language: String? = null): String
+    fun code(text: String, language: String?): String
 
 }

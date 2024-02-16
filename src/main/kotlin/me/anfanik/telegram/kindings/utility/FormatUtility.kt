@@ -29,7 +29,7 @@ fun String.url(url: String, parseMode: ParseMode = DEFAULT_MARKDOWN_MODE) =
 fun String.emoji(emojiId: Long, parseMode: ParseMode = DEFAULT_MARKDOWN_MODE) =
     getMarkdownFormatter(parseMode).emoji(this, emojiId)
 
-fun String.code(language: String, parseMode: ParseMode = DEFAULT_MARKDOWN_MODE) =
+fun String.code(language: String? = null, parseMode: ParseMode = DEFAULT_MARKDOWN_MODE) =
     getMarkdownFormatter(parseMode).code(this, language)
 
 private fun getMarkdownFormatter(parseMode: ParseMode): MarkdownFormatter =

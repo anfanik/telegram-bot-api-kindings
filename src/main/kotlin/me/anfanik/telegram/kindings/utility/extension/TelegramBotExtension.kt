@@ -8,6 +8,11 @@ import me.anfanik.telegram.kindings.exception.TelegramApiException
 
 @Suppress("NOTHING_TO_INLINE")
 @Throws(TelegramApiException::class)
+inline fun TelegramBot.getMe() : GetMeResponse
+        = execute(GetMe())
+
+@Suppress("NOTHING_TO_INLINE")
+@Throws(TelegramApiException::class)
 inline fun TelegramBot.getChat(chatId: Long) : GetChatResponse
         = execute(GetChat(chatId))
 

@@ -5,14 +5,14 @@ plugins {
 }
 
 group = "me.anfanik"
-version = "7.0.1-SNAPSHOT"
+version = "7.1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    implementation("com.github.pengrad:java-telegram-bot-api:7.0.1")
+    implementation("com.github.pengrad:java-telegram-bot-api:7.1.0")
 }
 
 kotlin {

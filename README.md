@@ -4,7 +4,7 @@ Kindings is `💡 kotlin bindings` for [Java Telegram Bot API](https://github.co
 
 Features:
 * 🛠 `WIP` Kotlin-style API methods for all [available methods](https://core.telegram.org/bots/api#available-methods)
-* 🛠 `TODO` Markdown methods for [String Templates](https://kotlinlang.org/docs/strings.html#string-templates)
+* 🛠 `WIP` Markdown methods for [String Templates](https://kotlinlang.org/docs/strings.html#string-templates)
 * ❌ `TODO` [Type-safe builders](https://kotlinlang.org/docs/type-safe-builders.html) for requests
 
 ## Usage
@@ -19,7 +19,7 @@ Add `telegram-bot-api-kindings` dependency of the same version as [java-telegram
   
     Add `telegram-bot-api-kindings` dependency:
     ```kotlin
-    implementation("me.anfanik:telegram-bot-api-kindings:7.0.1-SNAPSHOT")
+    implementation("me.anfanik:telegram-bot-api-kindings:7.1.0-SNAPSHOT")
     ```
 
 ## Examples

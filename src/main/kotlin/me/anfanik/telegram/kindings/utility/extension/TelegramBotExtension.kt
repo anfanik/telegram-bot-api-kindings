@@ -98,6 +98,11 @@ inline fun TelegramBot.forwardMessage(chatId: String, fromChatId: Long, messageI
 
 
 @Throws(TelegramApiException::class)
+inline fun TelegramBot.answerCallbackQuery(callbackQueryId: String, modifier: AnswerCallbackQuery.() -> Unit = {}) : BaseResponse
+        = execute(AnswerCallbackQuery(callbackQueryId), modifier)
+
+
+@Throws(TelegramApiException::class)
 inline fun <T : BaseRequest<T, R>, R : BaseResponse> TelegramBot.execute(request: T, modifier: T.() -> Unit = {}): R {
     val response = execute(request.apply(modifier))
 

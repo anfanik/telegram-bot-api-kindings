@@ -1,6 +1,7 @@
 package me.anfanik.telegram.kindings.utility.extension
 
 import com.pengrad.telegrambot.TelegramBot
+import com.pengrad.telegrambot.model.request.InlineKeyboardMarkup
 import com.pengrad.telegrambot.model.request.InputMedia
 import com.pengrad.telegrambot.request.*
 import com.pengrad.telegrambot.response.*
@@ -66,6 +67,25 @@ inline fun TelegramBot.editMessageCaption(chatId: Long, messageId: Int, caption:
 @Throws(TelegramApiException::class)
 inline fun TelegramBot.editMessageCaption(chatId: String, messageId: Int, caption: String, modifier: EditMessageCaption.() -> Unit = {}) : BaseResponse
         = execute(EditMessageCaption(chatId, messageId).apply { caption(caption) }, modifier)
+
+
+@Throws(TelegramApiException::class)
+inline fun TelegramBot.editMessageReplyMarkup(chatId: Long, messageId: Int, modifier: EditMessageReplyMarkup.() -> Unit = {}) : BaseResponse
+        = execute(EditMessageReplyMarkup(chatId, messageId), modifier)
+
+@Throws(TelegramApiException::class)
+inline fun TelegramBot.editMessageReplyMarkup(chatId: String, messageId: Int, modifier: EditMessageReplyMarkup.() -> Unit = {}) : BaseResponse
+        = execute(EditMessageReplyMarkup(chatId, messageId), modifier)
+
+@Suppress("NOTHING_TO_INLINE")
+@Throws(TelegramApiException::class)
+inline fun TelegramBot.removeInlineKeyboard(chatId: Long, messageId: Int) : BaseResponse
+        = editMessageReplyMarkup(chatId, messageId) { replyMarkup(InlineKeyboardMarkup()) }
+
+@Suppress("NOTHING_TO_INLINE")
+@Throws(TelegramApiException::class)
+inline fun TelegramBot.removeInlineKeyboard(chatId: String, messageId: Int) : BaseResponse
+        = editMessageReplyMarkup(chatId, messageId) { replyMarkup(InlineKeyboardMarkup()) }
 
 
 @Throws(TelegramApiException::class)

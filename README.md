@@ -19,7 +19,7 @@ Add `telegram-bot-api-kindings` dependency of the same version as [java-telegram
   
     Add `telegram-bot-api-kindings` dependency:
     ```kotlin
-    implementation("me.anfanik:telegram-bot-api-kindings:7.1.0-SNAPSHOT")
+    implementation("me.anfanik:telegram-bot-api-kindings:7.2.0-SNAPSHOT")
     ```
 
 ## Examples
